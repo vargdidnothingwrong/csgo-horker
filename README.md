@@ -31,12 +31,12 @@ Current build requirements are as follows:
 Specific distro instructions for build requirements:
 
 
-**Arch Linux**
+*Arch Linux*:
 ```bash
 sudo pacman -S xorg-server libxnvctrl cmake base-devel git
 ```
 
-**Debian/Ubuntu/Mint**
+*Debian/Ubuntu/Mint*:
 ```bash
 sudo apt-get install xorg-dev libxnvctrl-dev cmake build-essential git
 ```
