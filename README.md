@@ -28,6 +28,19 @@ Current build requirements are as follows:
 * X11
 * libXNVCtrl (Optional for automated contrast control with Nvidia drivers)
 
+Specific distro instructions for build requirements:
+
+
+**Arch Linux**
+```bash
+sudo pacman -S xorg-server libxnvctrl cmake base-devel git
+```
+
+**Debian/Ubuntu/Mint**
+```bash
+sudo apt-get install xorg-dev libxnvctrl-dev cmake build-essential git
+```
+
 ##### Clone the repository
 ```bash
 git clone https://github.com/Teklad/csgo-horker.git
