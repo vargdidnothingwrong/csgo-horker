@@ -1,7 +1,7 @@
 # Horker
 A simple CSGO Linux external hack.
 
-### Current Features
+## Current Features
 * AimBot (experimental)
 * Automated Contrast/Digital Vibrance control (Nvidia only for now)
 * Disable Post Processing
@@ -11,19 +11,19 @@ A simple CSGO Linux external hack.
 * Recoil Control
 * Trigger
 
-##### Mouse button support
+### Mouse button support
 There is also mouse button support as of commit cdc56a4.  The only known bug at this time is it doesn't register until after the first shot, which is mostly because I was too lazy to do it via Alt1 for now.
 
 To enable this, you will need to set "TriggerKey" to "Mouse1", "Mouse2", or "Mouse3" respectively, without the quotes.
 
-##### TODO
+## TODO
 * Code base is starting to get.... messy?  I need to focus on cleaning this up when I get time.
 * Implement more features.
 * Error margin for recoil control so its less.... suspicious
 
-### Compiling
+## Compiling
 
-##### Build requirements
+### Build requirements
 Current build requirements are as follows:
 * X11
 * libXNVCtrl (Optional for automated contrast control with Nvidia drivers)
@@ -41,18 +41,18 @@ sudo pacman -S xorg-server libxnvctrl cmake base-devel git
 sudo apt-get install xorg-dev libxnvctrl-dev cmake build-essential git
 ```
 
-##### Clone the repository
+### Clone the repository
 ```bash
 git clone https://github.com/Teklad/csgo-horker.git
 ```
 
-##### Build the project
+### Build the project
 ```bash
 cd csgo-horker
 ./build.sh
 ```
 
-### Running
+## Running
 In order to run this, you MUST use sudo/su due to the memory functions.  Once you've compiled the project, you can run it from the build directory:
 ```bash
 ./run.sh
