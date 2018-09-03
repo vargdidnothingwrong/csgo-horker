@@ -47,6 +47,13 @@ int main()
         return 0;
     }
 
+    char* displayName = getenv("DISPLAY");
+    if (displayName) {
+        printf("Display is: %s\n", displayName);
+    } else {
+        printf("Failed to find display!\n");
+    }
+
     if (!Helper::Init()) {
         LOG("Failed to initialize input handling.\n");
         return 0;
