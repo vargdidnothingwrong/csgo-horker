@@ -45,5 +45,9 @@ namespace Config {
         extern bool DisablePostProcessing;
         extern int  Contrast;
     };
+
+    namespace Other {
+        extern bool BunnyHop;
+    }
 };
 

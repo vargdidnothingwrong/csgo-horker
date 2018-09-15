@@ -42,6 +42,8 @@ std::string Config::AimBot::TriggerKey = "F";
 bool  Config::AimBot::UseMouseEvents = false;
 bool  Config::AimBot::AttackTeammate = false;
 
+bool Config::Other::BunnyHop = false;
+
 #define WriteSection(key) \
     conf << "[" #key "]" << "\n";
 #define WritePair(section, key) \
@@ -116,6 +118,10 @@ void UpdateConfig()
         WritePair(Visual, DisablePostProcessing);
         WriteComment("Disable flashbang visual effect");
         WritePair(Visual, NoFlash);
+
+        WriteSection(Other);
+        WriteComment("Enable bunnyhop 1/0");
+        WritePair(Other, BunnyHop);
         conf.close();
     }
 }
@@ -170,6 +176,8 @@ bool ReadConfig(const std::string &configFile)
     RCINT(Visual, Contrast);
     RCBOOL(Visual, DisablePostProcessing);
     RCBOOL(Visual, NoFlash);
+
+    RCBOOL(Other, BunnyHop);
     UpdateConfig();
     return true;
 }

@@ -2,7 +2,9 @@
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
 #include <X11/keysymdef.h>
+#include <cstdio>
 
+std::mutex Helper::m_mutex;
 static Display* m_dpy = nullptr;
 bool Helper::Init()
 {
@@ -21,6 +23,7 @@ void Helper::Finalize()
 
 bool Helper::IsKeyDown(int key)
 {
+    std::lock_guard<std::mutex> guard(m_mutex);
     char keys[32];
     XQueryKeymap(m_dpy, keys);
     return (keys[key/8] & (1<<(key%8)));
@@ -28,6 +31,7 @@ bool Helper::IsKeyDown(int key)
 
 bool Helper::IsMouseDown(unsigned int buttonMask)
 {
+    std::lock_guard<std::mutex> guard(m_mutex);
     Window root = RootWindow(m_dpy, 0);
     Window rootWindow, childWindow;
     int rootX, rootY, winX, winY;
@@ -44,6 +48,11 @@ int Helper::StringToKeycode(std::string keyString)
 {
     KeySym ks = XStringToKeysym(keyString.data());
     return XKeysymToKeycode((Display*)m_dpy, ks);
+}
+
+int Helper::KeysymToKeycode(int key)
+{
+    return XKeysymToKeycode(m_dpy, key);
 }
 
 unsigned int Helper::StringToMouseMask(std::string buttonString)

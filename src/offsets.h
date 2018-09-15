@@ -13,6 +13,7 @@ namespace Offset {
     namespace Client {
         extern uintptr_t EntityList;
         extern uintptr_t ForceAttack;
+        extern uintptr_t ForceJump;
         extern uintptr_t LocalPlayer;
         extern uintptr_t GlowObjectManager;
         extern uintptr_t PlayerResources;

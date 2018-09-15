@@ -8,6 +8,7 @@ add_executable(horker
     features/faim.cpp
     features/fbase.cpp
     features/fglow.cpp
+    features/fother.cpp
     features/fvisual.cpp
     sdk/centitylist.cpp
     hwctrl.cpp

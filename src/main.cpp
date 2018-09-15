@@ -1,5 +1,6 @@
 #include "features/faim.h"
 #include "features/fglow.h"
+#include "features/fother.h"
 #include "features/fvisual.h"
 #include "sdk/cbaseentity.h"
 #include "sdk/cglowobjectmanager.h"
@@ -96,6 +97,7 @@ int main()
     // Feature handlers
     FAim faim(proc);
     FGlow fglow(proc);
+    FOther fother(proc);
     FVisual fvisual(proc);
 
     if (Config::Visual::Contrast != 0) {
@@ -117,6 +119,7 @@ int main()
         if (eng.IsConnected()) {
             faim.Start();
             fglow.Start();
+            fother.Start();
             fvisual.Start();
 
             while (eng.IsConnected() && !shouldQuit) {
@@ -126,6 +129,7 @@ int main()
 
             faim.Stop();
             fglow.Stop();
+            fother.Stop();
             fvisual.Stop();
         }
         // ### END IN-GAME HACKS ###
