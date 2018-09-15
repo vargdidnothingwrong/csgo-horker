@@ -4,6 +4,7 @@ A simple CSGO Linux external hack.
 ## Current Features
 * AimBot (experimental)
 * Automated Contrast/Digital Vibrance control (Nvidia only for now)
+* Bunny Hop
 * Disable Post Processing
 * Glow
 * NoFlash
