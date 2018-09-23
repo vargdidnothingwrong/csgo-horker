@@ -34,8 +34,6 @@ void FOther::Run()
         }
         if (Config::Other::BunnyHop) {
             BHop(localPlayer);
-        }else {
-            std::cout << "ERR\n";
         }
         WaitMs(5);
     }
