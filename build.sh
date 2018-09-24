@@ -1,5 +1,7 @@
-rm -rf build
-mkdir build && cd build
+if [ ! -d "build" ]; then
+  mkdir build
+fi
+cd build
 cmake ..
 make
 echo build complete on ./build/src/horker!
