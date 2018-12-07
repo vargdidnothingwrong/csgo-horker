@@ -26,7 +26,7 @@ namespace Offset {
     namespace Static {
         constexpr size_t SignOnState = 0x1a0;
         constexpr size_t ViewAngles = 0x8E20;
-        constexpr size_t BoneMatrix = 0x2c70;
+        constexpr size_t BoneMatrix = 0x2c78;
         constexpr size_t BoneDistance = 0x30; // Read(BoneMatrix) + BoneDistance
     };
 };
@@ -34,20 +34,19 @@ namespace Offset {
 namespace Netvar {
     namespace CBaseEntity {
         constexpr size_t index = 0x94;
-        constexpr size_t m_vecOrigin = 0x16c;
-        constexpr size_t m_bDormant = 0x121;
-        constexpr size_t m_fFlags = 0x124;
-        constexpr size_t m_iTeamNum = 0x128;
-        constexpr size_t m_vecViewOffset = 0x13c;
-        constexpr size_t m_angRotation = 0x160;
-        constexpr size_t m_nModelIndex = 0x28c;
-        constexpr size_t m_lifeState = 0x293;
+        constexpr size_t m_vecOrigin = 0x170;
+        constexpr size_t m_fFlags = 0x13c;
+        constexpr size_t m_iTeamNum = 0x12c;
+        constexpr size_t m_vecViewOffset = 0x140;
+        constexpr size_t m_angRotation = 0x164;
+        constexpr size_t m_nModelIndex = 0x290;
+        constexpr size_t m_lifeState = 0x297;
     };
     namespace CBasePlayer {
-        constexpr size_t m_bSpotted = 0xECD;
-        constexpr size_t m_Local = 0x36f0;
-        constexpr size_t m_flFlashDuration = 0xabf8;
-        constexpr size_t m_iCrosshairID = 0xbbe0;
+        constexpr size_t m_bSpotted = 0xecd;
+        constexpr size_t m_Local = 0x3700;
+        constexpr size_t m_flFlashDuration = 0xad00;
+        constexpr size_t m_iCrosshairID = 0xbbe4;
         namespace Local {
             constexpr size_t m_aimPunchAngle = m_Local + 0x74;
         };

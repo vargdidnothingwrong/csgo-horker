@@ -49,7 +49,7 @@ class CBaseEntity {
         int m_iEFlags; // 0x11C
         unsigned char m_nWaterType; // 0x120
         bool m_bDormant; // 0x121
-        char __buf_0x122[0x2]; // 0x122
+        char __buf_0x122[0x6]; // 0x122
         int m_fEffects; // 0x124
         int m_iTeamNum; // 0x128
         int m_iPendingTeamNum; // 0x12C

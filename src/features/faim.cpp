@@ -141,7 +141,6 @@ void FAim::Aim(uintptr_t localPlayer, int myTeam)
         }
         if (ent.m_iTeamNum == myTeam && !Config::AimBot::AttackTeammate)
             continue;
-
         if (ent.m_iHealth < 1) {
             continue;
         }
