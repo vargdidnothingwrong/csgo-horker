@@ -31,7 +31,6 @@ bool FAim::GetBonePosition(uintptr_t ePtr, int bone, Vector *out)
     out->x = mat[0][3];
     out->y = mat[1][3];
     out->z = mat[2][3];
-    printf("%.3f %.3f %.3f\n", out->x, out->y, out->z);
     return true;
 }
 
@@ -253,13 +252,11 @@ void FAim::Run() {
         this->Recoil(localPlayer, !triggerOn);
 
         if (Config::AimBot::Trigger && triggerOn) {
-
             int inCrossID;
             if (!m_mem.Read(localPlayer + Netvar::CBasePlayer::m_iCrosshairID, &inCrossID)) {
                 LogWait("[FAim/Trigger] Failed to read crosshair ID");
                 continue;
             }
-
             if (inCrossID > 0 && inCrossID < 65) {
                 CBaseEntity ent;
                 if (!eng.GetEntityById(inCrossID, &ent)) {
