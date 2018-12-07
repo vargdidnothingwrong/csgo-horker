@@ -46,7 +46,7 @@ void FAim::Recoil(uintptr_t localPlayer, bool forceReset)
     Vector punchAngle;
     Vector viewAngle;
     int shotsFired = 0;
-    m_mem.Read(localPlayer + 0xabd0, &shotsFired);
+    m_mem.Read(localPlayer + 0xac90, &shotsFired);
     if (shotsFired > 1) {
         m_mem.Read(Offset::Engine::ClientState + Offset::Static::ViewAngles, &viewAngle);
         if (m_mem.Read(localPlayer + Netvar::CBasePlayer::Local::m_aimPunchAngle, &punchAngle)) {
