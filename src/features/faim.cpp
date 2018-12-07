@@ -20,17 +20,18 @@ bool FAim::GetBonePosition(uintptr_t ePtr, int bone, Vector *out)
 {
     matrix3x4_t mat;
     uintptr_t pBoneMatrix;
-    if (!m_mem.Read(ePtr + Offset::Static::BoneMatrix, &pBoneMatrix)) {
+    if (!m_mem.Read(ePtr + 0x2c80, &pBoneMatrix)) {
         Log("[FAim/Aim] Failed to get bone matrix");
         return false;
     }
-    if (!m_mem.Read(pBoneMatrix + Offset::Static::BoneDistance * bone, &mat)) {
+    if (!m_mem.Read(pBoneMatrix + 0x30 * bone, &mat)) {
         Log("[FAim/Aim] Failed to get bone distance");
         return false;
     }
     out->x = mat[0][3];
     out->y = mat[1][3];
     out->z = mat[2][3];
+    printf("%.3f %.3f %.3f\n", out->x, out->y, out->z);
     return true;
 }
 
